@@ -1,9 +1,15 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
+#include "kernel.h"
 
 void kernel_main(void)
 {
-    //
-    uint16_t *terminal_buffer = (uint16_t *)0xB8000;
+    clear_screen();
+    size_t i;
+    for (i = 0; i < 10; i++)
+    {
+        print_i(i);
+        println();
+    }
 }
